@@ -7,8 +7,8 @@ public class Dog extends Animal implements Canine{
 	public boolean getWasWalked() {
 		return wasWalked;
 	}
-	public Dog(String name, int health, int boredom, int hunger, int thirst, boolean wasWalked) {
-		super(name, health, boredom, hunger, thirst);
+	public Dog(String name, int unhealthy, int boredom, int hunger, int thirst, boolean wasWalked) {
+		super(name, unhealthy, boredom, hunger, thirst);
 		this.wasWalked = wasWalked;
 
 	}
@@ -20,6 +20,9 @@ public class Dog extends Animal implements Canine{
 		}
 		
 		wasWalked = true;
+	}
+	public void noLongerWalked() {
+		wasWalked = false;
 	}
 
 

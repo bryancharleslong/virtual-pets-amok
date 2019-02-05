@@ -9,7 +9,7 @@ import org.junit.Test;
 public class CatTest {
 	Cat underTest = new Cat("name", 10, 15, 20, 25);
 
-	// name, health, boredom, hunger, thirst
+	// name, unhealthy, boredom, hunger, thirst
 	@Test
 	public void getNameShouldReturnName() {
 		String name = underTest.getName();
@@ -18,7 +18,7 @@ public class CatTest {
 
 	@Test
 	public void gethHealthShouldReturn10() {
-		int health = underTest.getHealth();
+		int health = underTest.getUnhealthy();
 		assertThat(health, is(10));
 	}
 
@@ -41,17 +41,17 @@ public class CatTest {
 	}
 
 	@Test
-	public void feedShouldDecreaseHungerBy10() {
+	public void feedShouldDecreaseHungerBy15() {
 		underTest.feed();
 		int hunger = underTest.getHunger();
-		assertThat(hunger, is(10));
+		assertThat(hunger, is(5));
 	}
 
 	@Test
-	public void waterShouldDecreaseThirstBy10() {
+	public void waterShouldDecreaseThirstBy15() {
 		underTest.water();
 		int thirst = underTest.getThirst();
-		assertThat(thirst, is(15));
+		assertThat(thirst, is(10));
 
 	}
 

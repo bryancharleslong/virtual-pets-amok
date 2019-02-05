@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class RoboCatTest {
 	RoboCat underTest = new RoboCat("name", 10, 15, 20);
-	// name, health, boredom, oilNeed
+	// name, unhealthy, boredom, oilNeed
 
 	@Test
 	public void getNameShouldReturnName() {
@@ -17,7 +17,7 @@ public class RoboCatTest {
 
 	@Test
 	public void gethHealthShouldReturn10() {
-		int health = underTest.getHealth();
+		int health = underTest.getUnhealthy();
 		assertThat(health, is(10));
 	}
 

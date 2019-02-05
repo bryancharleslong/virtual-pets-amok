@@ -2,8 +2,8 @@ package virtual.pets.amok;
 
 public class RoboDog extends Robot implements Canine {
 
-	public RoboDog(String name, int health, int boredom, int oilNeed) {
-		super(name, health, boredom, oilNeed);
+	public RoboDog(String name, int unhealthy, int boredom, int oilNeed) {
+		super(name, unhealthy, boredom, oilNeed);
 	}
 
 	@Override

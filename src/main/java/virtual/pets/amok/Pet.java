@@ -1,29 +1,40 @@
 package virtual.pets.amok;
 
 public abstract class Pet {
-	private String name;
-	private int health;
+	protected String name;
+	protected int unhealthy;
 	protected int boredom;
 
-	public String getName(){
+	public String getName() {
 		return name;
 	}
-	public int getHealth() {
-		return health;
+
+	public int getUnhealthy() {
+		return unhealthy;
 	}
+
 	public int getBoredom() {
 		return boredom;
 	}
-	
-	public Pet(String name, int health, int boredom) {
+
+	public Pet(String name, int unhealthy, int boredom) {
 		this.name = name;
-		this.health = health;
+		this.unhealthy = unhealthy;
 		this.boredom = boredom;
 	}
+
 	public void play() {
-		boredom -=15;
-		if(boredom<0) {
-			
+		boredom -= 15;
+		if (boredom < 0) {
+			boredom = 0;
 		}
 	}
+
+	protected void tick() {
+		boredom++;
+	}
+
+	protected abstract void changeHealth(boolean isDirty);
+	
+	public abstract String toString();
 }
