@@ -10,5 +10,4 @@ public class LitterBox extends Area {
 		}
 		return isDirty;
 	}
-
 }

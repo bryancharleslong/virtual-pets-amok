@@ -9,6 +9,19 @@ public class Shelter {
 
 	private Map<Pet, Area> shelter = new HashMap<>();
 	private LitterBox litterBox = new LitterBox();
+	
+	public int getLitterBoxDirty() {
+		return litterBox.getDirty();
+	}
+	
+	public Collection<Pet> getPets() {
+		return shelter.keySet();
+	}
+	
+	public int getDirty(Pet aPet) {
+		Area anArea = shelter.get(aPet);
+		return anArea.getDirty();
+	}
 
 	public Area getArea(Pet aPet) {
 		Area aPetArea = null;
@@ -29,16 +42,8 @@ public class Shelter {
 		}
 	}
 
-	public Collection<Pet> getPets() {
-		return shelter.keySet();
-	}
-
 	public void adopt(Pet aPet) {
 		shelter.remove(aPet);
-	}
-
-	public int getLitterBoxDirty() {
-		return litterBox.getDirty();
 	}
 
 	public void tick() {
@@ -57,11 +62,6 @@ public class Shelter {
 				((Dog) aPet).noLongerWalked();
 			}
 		}
-	}
-
-	public int getDirty(Pet aPet) {
-		Area anArea = shelter.get(aPet);
-		return anArea.getDirty();
 	}
 
 	public void oilAll() {

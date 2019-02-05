@@ -7,11 +7,12 @@ public class Dog extends Animal implements Canine{
 	public boolean getWasWalked() {
 		return wasWalked;
 	}
+	
 	public Dog(String name, int unhealthy, int boredom, int hunger, int thirst, boolean wasWalked) {
 		super(name, unhealthy, boredom, hunger, thirst);
 		this.wasWalked = wasWalked;
-
 	}
+	
 	@Override
 	public void walk() {
 		boredom -=7;
@@ -21,9 +22,8 @@ public class Dog extends Animal implements Canine{
 		
 		wasWalked = true;
 	}
+	
 	public void noLongerWalked() {
 		wasWalked = false;
 	}
-
-
 }

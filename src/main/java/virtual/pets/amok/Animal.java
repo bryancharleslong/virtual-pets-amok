@@ -17,7 +17,6 @@ public abstract class Animal extends Pet {
 		super(name, unhealthy, boredom);
 		this.hunger = hunger;
 		this.thirst = thirst;
-
 	}
 
 	public void feed() {
