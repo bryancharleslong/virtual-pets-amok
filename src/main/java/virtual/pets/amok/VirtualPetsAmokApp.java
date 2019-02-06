@@ -44,14 +44,19 @@ public class VirtualPetsAmokApp {
 			cleanCageMenu();
 		} else if (menuChoice.equals("4")) {
 			myShelter.emptyLitterBox();
+			System.out.println("You empty the shelter's litterbox.\n");
 		} else if (menuChoice.equals("5")) {
 			myShelter.feedAll();
+			System.out.println("You feed all of the animals.\n");
 		} else if (menuChoice.equals("6")) {
 			myShelter.waterAll();
+			System.out.println("You water all of the animals.\n");
 		} else if (menuChoice.equals("7")) {
 			myShelter.oilAll();
+			System.out.println("You oil all of the robot pets.\n");
 		} else if (menuChoice.equals("8")) {
 			myShelter.walkAll();
+			System.out.println("You walk all of the dogs.\n");
 		} else if (menuChoice.equals("9")) {
 			playMenu();
 		}
@@ -62,7 +67,8 @@ public class VirtualPetsAmokApp {
 		Collection<Pet> pets = myShelter.getPets();
 		ArrayList<Canine> canines = new ArrayList<>();
 		for (Pet aPet : pets) {
-			if (aPet instanceof Canine) {
+			Class<?> petClass = aPet.getClass();
+			if (petClass.getSimpleName().equals("Dog")||petClass.getSimpleName().equals("RoboDog")) {
 				canines.add((Canine) aPet);
 			}
 		}
